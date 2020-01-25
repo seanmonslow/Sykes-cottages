@@ -11,6 +11,12 @@
 |
 */
 
+use Illuminate\Support\Facades\DB;
+
 Route::get('/', function () {
-    return view('welcome');
+	$properties = DB::select('select * from properties');
+
+    return (['users' => $properties]);
+	//return (["hello", "world"]);
+    //return view('welcome');
 });

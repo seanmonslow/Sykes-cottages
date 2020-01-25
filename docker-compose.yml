@@ -19,7 +19,9 @@ services:
       - laravel
 
   mysql:
-    image: mysql:5.7.22
+    build:
+      context: ./mysql
+      dockerfile: Dockerfile
     container_name: mysql
     restart: unless-stopped
     tty: true
@@ -28,7 +30,7 @@ services:
     ports:
       - "3306:3306"
     environment:
-      MYSQL_DATABASE: cottages
+      MYSQL_DATABASE: sykes_interview
       MYSQL_USER: homestead
       MYSQL_PASSWORD: secret
       MYSQL_ROOT_PASSWORD: secret
