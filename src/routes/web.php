@@ -13,10 +13,6 @@
 
 use Illuminate\Support\Facades\DB;
 
-Route::get('/', function () {
-	$properties = DB::select('select * from properties');
+Route::get('/', 'PropertiesController@index');
 
-    return (['users' => $properties]);
-	//return (["hello", "world"]);
-    //return view('welcome');
-});
+Route::get('/search', 'PropertiesController@index');
