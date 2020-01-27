@@ -70,6 +70,9 @@
 					</span>
 					<input type="date" name="date" class="border border-solid border-black" value="{{request()->query('date')}}">
 				</div>
+                @if($errors->any())
+				    {!! implode('', $errors->all('<div>:message</div>')) !!}
+				@endif
 				<input type="submit" value="Search" class="width-100 mt-1" style="background-color:#3c6f97; color:white;">
 			</form>
 			<div class="w-2/3 flex flex-col px-2">
@@ -88,8 +91,5 @@
 				@endforeach
 			</div>
 		</div>
-		@if($errors->any())
-		    {!! implode('', $errors->all('<div>:message</div>')) !!}
-		@endif
 	</body>
 </html>
