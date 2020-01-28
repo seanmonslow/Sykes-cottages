@@ -6,7 +6,7 @@ Project for Sykes involving the example holiday cottage data
 
 - Includes docker-compose file to get up and running straight away
 - Includes pagination
-- Works on mobile
+- Shows price and discount if there is one
 
 ## Instructions
 
